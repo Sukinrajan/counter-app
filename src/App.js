@@ -12,7 +12,7 @@ function App() {
       
       <button onClick={()=>setCount(count*5)}> *5 </button>
       <button onClick={()=>{
-        if(count<5){
+        if(count<5){   //for Don't Show Negative Values
           setCount(count)
         }else{
           setCount(count/5)
