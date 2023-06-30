@@ -29,10 +29,10 @@ function App() {
     count = count + 1;
     setCount(count);
     updateNumbers();
-    oddNumber();
+         oddNumber(); 
     evenNumber();
   };
-
+  
   const decrementCount = () => {
     if (count > 0) {
       count = count - 1;
