@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Sukinrajan/counter-app.git/static/css/main.c3369259.css",
-    "main.js": "/Sukinrajan/counter-app.git/static/js/main.3d7c5f4e.js",
-    "index.html": "/Sukinrajan/counter-app.git/index.html",
-    "main.c3369259.css.map": "/Sukinrajan/counter-app.git/static/css/main.c3369259.css.map",
-    "main.3d7c5f4e.js.map": "/Sukinrajan/counter-app.git/static/js/main.3d7c5f4e.js.map"
+    "main.css": "/counter-app.git/static/css/main.c3369259.css",
+    "main.js": "/counter-app.git/static/js/main.3d7c5f4e.js",
+    "index.html": "/counter-app.git/index.html",
+    "main.c3369259.css.map": "/counter-app.git/static/css/main.c3369259.css.map",
+    "main.3d7c5f4e.js.map": "/counter-app.git/static/js/main.3d7c5f4e.js.map"
   },
   "entrypoints": [
     "static/css/main.c3369259.css",
