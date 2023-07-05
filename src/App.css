@@ -4,3 +4,8 @@ h4{
     align-items: center;
     gap: 80px;
 }
+.column {
+    display: flex;
+    flex-direction: column;
+  }
+  

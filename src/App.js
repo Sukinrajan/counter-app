@@ -61,10 +61,24 @@ function App() {
       </div>
 
       <h4>
-        <div>Number: {numbers.join(", ")}</div>
-        <div>ODD Numbers: {oddNumbers.join(", ")}</div>
-        <div>EVEN Numbers: {evenNumbers.join(", ")}</div>
-        <div>Square Numbers: {sqNumbers.join(", ")}</div>
+        <div>Number:
+          <div className="column">{numbers.map((number, index) => (
+              <span key={index}>{number}</span> ))}
+          </div></div>
+        <div>ODD Numbers: 
+          <div className="column">{oddNumbers.map((number, index) => (
+              <span key={index}>{number}</span> ))}
+          </div></div>
+        <div>EVEN Numbers: 
+        <div className="column">{evenNumbers.map((number, index) => (
+              <span key={index}>{number}</span> ))}
+          </div>
+        </div>
+        <div>Square Numbers: 
+        <div className="column">{sqNumbers.map((number, index) => (
+              <span key={index}>{number}</span> ))}
+          </div>
+        </div>
       </h4>
     </div>
   );
