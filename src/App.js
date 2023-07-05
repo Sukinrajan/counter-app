@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  let [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
   const [numbers, setNumbers] = useState([]);
   const [oddNumbers, setOddNumbers] = useState([]);
   const [evenNumbers, setEvenNumbers] = useState([]);
   const [sqNumbers, setSqNumbers] = useState([]);
+
+  useEffect(() => {
+    updateNumbers();
+    oddNumber();
+    evenNumber();
+  }, [count]);
 
   const updateNumbers = () => {
     setNumbers([...numbers, count]);
@@ -15,31 +21,23 @@ function App() {
 
   const oddNumber = () => {
     if (count % 2 !== 0) {
-        setOddNumbers([...oddNumbers, count]);
-      }
+      setOddNumbers([...oddNumbers, count]);
+    }
   };
 
   const evenNumber = () => {
     if (count % 2 === 0) {
-        setEvenNumbers([...evenNumbers, count]);
-      }
+      setEvenNumbers([...evenNumbers, count]);
+    }
   };
 
   const incrementCount = () => {
-    count = count + 1;
-    setCount(count);
-    updateNumbers();
-         oddNumber(); 
-    evenNumber();
+    setCount(count + 1);
   };
-  
+
   const decrementCount = () => {
     if (count > 0) {
-      count = count - 1;
-      setCount(count);
-      updateNumbers();
-      oddNumber();
-    evenNumber();
+      setCount(count - 1);
     }
   };
 
@@ -53,7 +51,6 @@ function App() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-    
       <h1>Counter App</h1>
       <h3>Value: {count}</h3>
 
