@@ -4,32 +4,24 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   const [numbers, setNumbers] = useState([]);
-  const [oddNumbers, setOddNumbers] = useState([]);
-  const [evenNumbers, setEvenNumbers] = useState([]);
-  const [sqNumbers, setSqNumbers] = useState([]);
+
+  const oddNumbers = numbers.filter(num => num % 2 !== 0)
+  const evenNumbers = numbers.filter(num => num % 2 === 0)
+  const sqNumbers = numbers.filter(num => Math.sqrt(num) % 1 === 0)
 
   useEffect(() => {
     updateNumbers();
-    oddNumber();
-    evenNumber();
   }, [count]);
 
   const updateNumbers = () => {
     setNumbers([...numbers, count]);
-    setSqNumbers([...sqNumbers, count * count]);
   };
 
-  const oddNumber = () => {
-    if (count % 2 !== 0) {
-      setOddNumbers([...oddNumbers, count]);
-    }
-  };
-
-  const evenNumber = () => {
-    if (count % 2 === 0) {
-      setEvenNumbers([...evenNumbers, count]);
-    }
-  };
+  // const squareNumbers = () => {
+  //   if(Math.sqrt(count) % 1 === 0){
+  //   setSqNumbers([...sqNumbers, count]);
+  //   }
+  // };
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -44,9 +36,6 @@ function App() {
   const resetCount = () => {
     setCount(0);
     setNumbers([]);
-    setOddNumbers([]);
-    setEvenNumbers([]);
-    setSqNumbers([]);
   };
 
   return (
@@ -55,9 +44,9 @@ function App() {
       <h3>Value: {count}</h3>
 
       <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
-        <button onClick={incrementCount}>+1</button>
-        <button onClick={decrementCount}>-1</button>
-        <button onClick={resetCount}>0</button>
+        <button onClick={incrementCount}>Increment</button>
+        <button onClick={decrementCount}>Decrement</button>
+        <button onClick={resetCount}>Reset</button>
       </div>
 
       <h4>
@@ -70,14 +59,14 @@ function App() {
               <span key={index}>{number}</span> ))}
           </div></div>
         <div>EVEN Numbers: 
-        <div className="column">{evenNumbers.map((number, index) => (
+         <div className="column">{evenNumbers.map((number, index) => (
               <span key={index}>{number}</span> ))}
           </div>
         </div>
         <div>Square Numbers: 
         <div className="column">{sqNumbers.map((number, index) => (
               <span key={index}>{number}</span> ))}
-          </div>
+          </div> 
         </div>
       </h4>
     </div>
