@@ -10,18 +10,8 @@ function App() {
   const sqNumbers = numbers.filter(num => Math.sqrt(num) % 1 === 0)
 
   useEffect(() => {
-    updateNumbers();
-  }, [count]);
-
-  const updateNumbers = () => {
     setNumbers([...numbers, count]);
-  };
-
-  // const squareNumbers = () => {
-  //   if(Math.sqrt(count) % 1 === 0){
-  //   setSqNumbers([...sqNumbers, count]);
-  //   }
-  // };
+  }, [count]);
 
   const incrementCount = () => {
     setCount(count + 1);
